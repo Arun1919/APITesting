@@ -1,10 +1,9 @@
 package restfulBroker.requests;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter @Setter @Builder
+@NoArgsConstructor@AllArgsConstructor
 public class BookingDates {
 
     private String checkin = "2018-01-01";

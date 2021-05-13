@@ -22,7 +22,7 @@ public class PostBooking {
 
         RequestSpecification request = RestAssured.given();
 
-        Booking booking = Booking.builder().build();
+        Booking booking = new Booking();
 
        Response response = request.header("Content-Type","application/json")
                 .body(booking)
