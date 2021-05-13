@@ -1,4 +1,4 @@
-package restfulBroker;
+package restfulBroker.endPoints;
 
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
