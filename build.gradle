@@ -13,8 +13,21 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    testCompile 'org.testng:testng:7.4.0'
-    testCompile group: 'io.rest-assured', name: 'rest-assured', version: '4.3.3'
-    testCompile group: 'com.jayway.restassured', name: 'rest-assured', version: '2.9.0'
-    testCompile group: 'org.json', name: 'json', version: '20210307'
+
+    implementation( 'org.testng:testng:7.4.0')
+
+    implementation group: 'io.rest-assured', name: 'rest-assured', version: '4.3.3'
+    implementation group: 'com.jayway.restassured', name: 'rest-assured', version: '2.9.0'
+
+    implementation group: 'org.json', name: 'json', version: '20210307'
+
+    implementation group: 'org.bitbucket.cowwoc', name: 'ToJsonString', version: '1.2'
+    //lombok
+    implementation('org.projectlombok:lombok:1.18.12')
+    annotationProcessor('org.projectlombok:lombok:1.18.12')
+    testImplementation('org.projectlombok:lombok:1.18.12')
+    testAnnotationProcessor('org.projectlombok:lombok:1.18.12')
+
+    //Google
+    implementation 'com.google.code.gson:gson:2.8.6'
 }
