@@ -1,4 +1,4 @@
-package restfulBroker.responses;
+package com.herokuapp.endpoints.models.responses;
 
 import lombok.Builder;
 import lombok.Getter;

@@ -1,9 +1,9 @@
-package restfulBroker.requests;
+package com.herokuapp.endpoints.models.requests;
 
 import lombok.*;
 import org.testng.Assert;
 
-@Getter @Setter @Builder
+@Getter @Setter @Builder(toBuilder = true)
 @NoArgsConstructor @AllArgsConstructor
 public class Booking {
 

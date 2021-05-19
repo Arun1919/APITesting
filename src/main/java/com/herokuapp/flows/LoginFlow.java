@@ -1,24 +1,19 @@
-package restfulBroker.endPoints;
+package com.herokuapp.flows;
 
+import com.herokuapp.endpoints.models.requests.LoginCred;
+import com.herokuapp.endpoints.models.responses.LoginResponse;
 import io.restassured.RestAssured;
+import io.restassured.http.Header;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import org.testng.annotations.Test;
-import restfulBroker.ScenarioContext;
-import restfulBroker.requests.LoginCred;
-import restfulBroker.responses.LoginResponse;
-import restfulBroker.utils.Context;
 
-public class Login extends ScenarioContext {
+public class LoginFlow {
 
-    @Test
-    public void makeLogin() {
+    public Header loginAuth(LoginCred loginCred ){
 
         RestAssured.baseURI = "https://restful-booker.herokuapp.com/auth";
 
         RequestSpecification requestSpecification = RestAssured.given();
-
-        LoginCred loginCred = new LoginCred();
 
         Response autResponse = requestSpecification.header("Content-Type", "application/json")
                 .body(loginCred)
@@ -28,12 +23,8 @@ public class Login extends ScenarioContext {
         loginResponse.verifyStatusCode(autResponse.getStatusCode());
 
         String loginResponseToken = loginResponse.getToken();
-        setContext(Context.TOKEN, loginResponseToken);
 
-        Object context = getContext(Context.TOKEN);
-        System.out.print(context);
+       return new Header("Cookie",String.format("token=%s",loginResponseToken));
 
     }
-
-
 }

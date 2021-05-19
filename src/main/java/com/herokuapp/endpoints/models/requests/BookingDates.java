@@ -1,4 +1,4 @@
-package restfulBroker.requests;
+package com.herokuapp.endpoints.models.requests;
 
 import lombok.*;
 

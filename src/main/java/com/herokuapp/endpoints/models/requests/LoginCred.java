@@ -1,6 +1,5 @@
-package restfulBroker.requests;
+package com.herokuapp.endpoints.models.requests;
 
-import com.sun.tracing.dtrace.ArgsAttributes;
 import lombok.*;
 
 @Getter @Setter @Builder @NoArgsConstructor @AllArgsConstructor
